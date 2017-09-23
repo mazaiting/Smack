@@ -1,0 +1,61 @@
+apply plugin: 'com.android.application'
+apply plugin: 'org.greenrobot.greendao' // apply plugin
+android {
+  compileSdkVersion 25
+  buildToolsVersion "26.0.1"
+  defaultConfig {
+    applicationId "com.mazaiting.smackim"
+    minSdkVersion 14
+    targetSdkVersion 25
+    versionCode 1
+    versionName "1.0"
+    testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+  }
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    }
+  }
+
+  // 数据库的版本及Dao相关设置
+  greendao {
+    // 数据库schema版本，也可以理解为数据库版本号
+    schemaVersion 1
+    //  设置DaoMaster 、DaoSession、Dao包名
+    daoPackage  'com.mazaiting.smackim.model.db.dao'
+    //  设置DaoMaster 、DaoSession、Dao目录
+    targetGenDir 'src/main/java'
+    //  设置自动生成单元测试用例
+    generateTests
+  }
+}
+
+dependencies {
+  compile fileTree(include: ['*.jar'], dir: 'libs')
+  androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    exclude group: 'com.android.support', module: 'support-annotations'
+  })
+  compile 'com.android.support:appcompat-v7:25.3.1'
+  testCompile 'junit:junit:4.12'
+  // XMPP通信
+  compile 'org.igniterealtime.smack:smack-im:4.2.0'
+  compile 'org.igniterealtime.smack:smack-tcp:4.2.0'
+  compile 'org.igniterealtime.smack:smack-android-extensions:4.2.0'
+  compile 'org.igniterealtime.smack:smack-android:4.2.0'
+  // 日志打印
+  compile 'com.orhanobut:logger:2.1.1'
+  // 依赖注入
+  compile 'com.jakewharton:butterknife:8.7.0'
+  annotationProcessor 'com.jakewharton:butterknife-compiler:8.7.0'
+  // 底部导航
+  compile 'com.jpeng:JPTabBar:1.2.5'
+  // 事件总线
+  compile 'org.greenrobot:eventbus:3.0.0'
+  // 异常捕获
+  compile 'com.mazaiting:crash:1.0.0'
+  // 列表
+  compile 'com.android.support:recyclerview-v7:25.3.1'
+  // 数据库
+  compile 'org.greenrobot:greendao:3.2.2'
+}

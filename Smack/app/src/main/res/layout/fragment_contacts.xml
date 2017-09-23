@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical"
+    >
+
+  <LinearLayout
+      android:id="@+id/llNewFriend_header_contacts"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="@drawable/selector_option_item"
+      android:gravity="center_vertical"
+      android:paddingBottom="7.5dp"
+      android:paddingLeft="15dp"
+      android:paddingRight="15dp"
+      >
+
+    <RelativeLayout
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="2dp"
+        >
+
+      <ImageView
+          android:layout_width="36dp"
+          android:layout_height="36dp"
+          android:layout_alignParentBottom="true"
+          android:src="@mipmap/ic_new_friend"
+          />
+
+      <View
+          android:id="@+id/vNewFriendUnread_header_contacts"
+          android:layout_width="10dp"
+          android:layout_height="10dp"
+          android:layout_alignParentRight="true"
+          android:background="@drawable/shape_dot_red"
+          android:visibility="gone"
+          />
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="6dp"
+        android:layout_marginTop="3dp"
+        android:singleLine="true"
+        android:text="新的朋友"
+        android:textColor="#888888"
+        android:textSize="16sp"
+        />
+
+  </LinearLayout>
+
+  <View
+      android:layout_marginLeft="15dp"
+      android:layout_marginRight="15dp"
+      android:visibility="visible"
+      style="@style/Line1"
+      />
+
+  <LinearLayout
+      android:id="@+id/root_contact_cv"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="@color/white"
+      android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="23dp"
+        android:background="#E5E5E5"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:text="A"
+        android:textColor="#989898"
+        android:textSize="13sp"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:id="@+id/llIndex_contact"
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:background="@drawable/selector_option_item"
+        android:gravity="center_vertical"
+        android:paddingBottom="7.5dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="7.5dp">
+
+      <ImageView
+          android:id="@+id/ivHeader_contact_cv"
+          android:scaleType="centerCrop"
+          android:layout_width="36dp"
+          android:layout_height="36dp"
+          android:src="@mipmap/ic_launcher"/>
+
+      <TextView
+          android:id="@+id/tvName_contact_cv"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="10dp"
+          android:layout_weight="1"
+          android:singleLine="true"
+          android:text="沧晓"
+          android:textColor="@color/gray0"
+          android:textSize="16sp"/>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/vLine_contact_cv"
+        style="@style/Line1"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:visibility="visible"
+        />
+
+  </LinearLayout>
+
+</LinearLayout>
